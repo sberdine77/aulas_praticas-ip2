@@ -4,17 +4,30 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Set;
 
+import br.ufrpe.academico.enums.DiasDaSemana;
+
 public class Turma {
     public static final int CAPACIDADE_MAXIMA = 60;
     private int ano;
     private int semestre;
 
     // TODO (10pts) Crie uma enumeração para representar melhor os dias da semana
-    private List<String> diasDaSemana;
+    private List<DiasDaSemana> diasDaSemana;
     private List<LocalTime> horarios;
     private Disciplina disciplina;
     private Set<Aluno> alunos;
     private Professor professorResponsavel;
+
+
+    public Turma(int ano, int semestre, List<DiasDaSemana> diasDaSemana, List<LocalTime> horarios, Disciplina disciplina, Set<Aluno> alunos, Professor professorResponsavel) {
+        this.ano = ano;
+        this.semestre = semestre;
+        this.diasDaSemana = diasDaSemana;
+        this.horarios = horarios;
+        this.disciplina = disciplina;
+        this.alunos = alunos;
+        this.professorResponsavel = professorResponsavel;
+    }    
 
     public int getAno() {
         return ano;
@@ -32,11 +45,11 @@ public class Turma {
         this.semestre = semestre;
     }
 
-    public List<String> getDiasDaSemana() {
+    public List<DiasDaSemana> getDiasDaSemana() {
         return diasDaSemana;
     }
 
-    public void setDiasDaSemana(List<String> diasDaSemana) {
+    public void setDiasDaSemana(List<DiasDaSemana> diasDaSemana) {
         this.diasDaSemana = diasDaSemana;
     }
 

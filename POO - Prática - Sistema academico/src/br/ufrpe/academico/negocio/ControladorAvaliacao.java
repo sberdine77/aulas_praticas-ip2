@@ -6,6 +6,7 @@ import java.util.List;
 import br.ufrpe.academico.dados.RepositorioGenerico;
 import br.ufrpe.academico.models.Aluno;
 import br.ufrpe.academico.models.Avaliacao;
+import br.ufrpe.academico.models.HistoricoAvaliacoes;
 
 public class ControladorAvaliacao {
     
@@ -24,8 +25,7 @@ public class ControladorAvaliacao {
         return instance;
     }
 
-    public List<Avaliacao> gerarHistoricoEscolar(Aluno aluno, 
-            LocalDateTime dataInicial, LocalDateTime dataFinal) {
+    public HistoricoAvaliacoes gerarHistoricoEscolar(Aluno aluno, LocalDateTime dataInicial, LocalDateTime dataFinal) {
         // TODO (30pts) Alterar tipo de retorno para ser um objeto que representa o histório escolar de um aluno
         // Você deverá criar uma classe que represente o histórico escolar do 
         // aluno com todas as avaliações que ele realizou dentro do período de
@@ -34,6 +34,7 @@ public class ControladorAvaliacao {
         // base nas suas avaliações realizadas.
         
         // Utilize o repositorioAvaliacoes para acessar todas as avaliações necessárias
-        return null;
+        HistoricoAvaliacoes historicoAvaliacoes = new HistoricoAvaliacoes(repositorioAvaliacoes, dataInicial.toLocalDate(), dataFinal.toLocalDate());
+        return historicoAvaliacoes;
     }
 }
